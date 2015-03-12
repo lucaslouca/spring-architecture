@@ -13,7 +13,7 @@ Java maven project to illustrate a good practice spring service-dao architecture
 
 To test the ``LibraryService`` run the ``com.mydomain.app.impl.AppTest`` in the **spring-app-service** module.
 
-Note: You need a running MySQL database to test the JDBC and Hibernate DAO (see src/main/resources/jdbc.properties under **spring-app-dao**).
+Note: You need a running MySQL database to test the JDBC and Hibernate DAO (see **src/main/resources/jdbc.properties** under **spring-app-dao**).
 
 **Architecture**
 
