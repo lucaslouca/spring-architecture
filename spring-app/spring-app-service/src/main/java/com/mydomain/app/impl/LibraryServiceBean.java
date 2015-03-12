@@ -46,13 +46,12 @@ public class LibraryServiceBean implements LibraryService {
 		}
 	}
 
-	public void setBookDao(BookDao bookDao) {
-		this.bookDao = bookDao;
-	}
-
 	@Override
 	public List<Book> listAllBooks() {
 		return bookDao.listAll();
 	}
 
+	public void setBookDao(BookDao bookDao) {
+		this.bookDao = bookDao;
+	}
 }
