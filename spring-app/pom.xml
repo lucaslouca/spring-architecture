@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mydomain.app</groupId>
+	<artifactId>spring-app</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>spring-app</name>
+	<modules>
+		<module>spring-app-api</module>
+		<module>spring-app-service</module>
+		<module>spring-app-domain</module>
+		<module>spring-app-dao</module>
+		<module>spring-app-dao-dummy</module>
+		<module>spring-app-dao-jdbc</module>
+		<module>spring-app-dao-hibernate</module>
+	</modules>
+	<!-- <dependencyManagement> dependencies are not actually included in the 
+		child projects just because they are in <dependencyManagement> in the parent 
+		POM. We still need to define them in the child POM to show that you are using 
+		them. The dependency management section is a mechanism for centralizing dependency 
+		information. When you have a set of projects that inherits a common parent 
+		it's possible to put all information about the dependency in the common POM 
+		and have simpler references to the artifacts in the child POMs. -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.mydomain.app</groupId>
+				<artifactId>spring-app-api</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mydomain.app</groupId>
+				<artifactId>spring-app-dao</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mydomain.app</groupId>
+				<artifactId>spring-app-domain</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mydomain</groupId>
+				<artifactId>spring-app-dao-dummy</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mydomain</groupId>
+				<artifactId>spring-app-dao-jdbc</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mydomain</groupId>
+				<artifactId>spring-app-dao-hibernate</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>4.2.2.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.2.2.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.26</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>4.1.1.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>4.1.1.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>4.1.1.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>4.1.1.RELEASE</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Dependencies inherited by all child modules -->
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<executable>${env.JAVA_HOME}/bin/javac</executable>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
