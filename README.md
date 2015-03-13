@@ -7,7 +7,7 @@ Java maven project to illustrate a good practice spring service-dao architecture
 * Click **Browse...** for the **Root Directory**
 * Select and open **spring-app**
 * Click **Finish**
-* Right click on **spring-app** in the Eclipse Project Explorer -> **Maven** -> **Update Project...**
+* Do a mvn update on **spring-app**
 
 ###Running a Test
 To test the ``LibraryService`` run the ``com.mydomain.app.impl.AppTest`` in the **spring-app-service** module.
